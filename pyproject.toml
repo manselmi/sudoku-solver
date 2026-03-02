@@ -1,0 +1,70 @@
+# vim: set ft=toml :
+
+
+[project]
+name = 'sudoku-solver'
+
+
+[tool.pixi.workspace]
+channels = ['conda-forge']
+platforms = [
+  'linux-64',
+  'linux-aarch64',
+  'osx-arm64',
+]
+
+[tool.pixi.dependencies]
+python = { version = '>=3.14,<3.15' }
+
+[tool.pixi.pypi-dependencies]
+ortools = { version = '*' }
+
+[tool.pixi.environments]
+default = { solve-group = 'default' }
+lint = { features = ['lint'], solve-group = 'default' }
+
+[tool.pixi.feature.lint.pypi-dependencies]
+ruff = { version = '*' }
+
+
+[tool.ruff]
+line-length = 100
+target-version = 'py314'
+
+[tool.ruff.format]
+preview = true
+
+[tool.ruff.lint]
+future-annotations = true
+ignore = [
+  'ANN',      # mypy handles our type annotations
+  'COM812',   # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  'COM819',   # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  'CPY',      # not publishing publicly
+  'D1',       # docstrings are optional
+  'E111',     # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  'E114',     # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  'E117',     # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  'E741',
+  'ERA',      # do not remove commented-out code
+  'ISC001',   # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  'ISC002',   # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  'Q000',     # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  'Q001',     # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  'Q002',     # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  'Q003',     # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  'T201',
+  'W191',     # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+]
+select = ['ALL']
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+known-first-party = []
+known-local-folder = []
+known-third-party = [
+  'ortools',
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = 'pep257'
