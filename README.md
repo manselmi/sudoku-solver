@@ -141,6 +141,6 @@ Conflicts:       35
 ```
 
 ``` shell
-find -- output -maxdepth 1 -type f -name '[0-9]*' -print0 | grep -zc -- '^'
+find -- output -maxdepth 1 -type f -name '[0-9]*' -print0 | tr -cd -- '\0' | wc -c
 # 288
 ```
