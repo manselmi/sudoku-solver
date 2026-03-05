@@ -31,7 +31,7 @@ positional arguments:
 options:
   -h, --help            show this help message and exit
   --output-dir OUTPUT_DIR
-                        Sudoku puzzle solutions will be written to this directory (default: /Users/manselmi/repos/sudoku-solver/output)
+                        Sudoku puzzle solutions will be written to this directory (default: output)
   --sep SEP             separator delimiting values within a row (input and output) (default: ,)
   --solution-limit SOLUTION_LIMIT
                         limit the number of solutions to this value (0 for no limit) (default: 1)
@@ -70,7 +70,7 @@ Conflicts:       0
 ```
 
 ``` shell
-column -t -s , -- output/0
+column -t -s , -- output/0.csv
 ```
 
 ``` text
@@ -141,6 +141,6 @@ Conflicts:       35
 ```
 
 ``` shell
-find -- output -maxdepth 1 -type f -name '[0-9]*' -print0 | tr -cd -- '\0' | wc -c
+find -- output -maxdepth 1 -type f -name '*.csv' -print0 | tr -cd -- '\0' | wc -c
 # 288
 ```

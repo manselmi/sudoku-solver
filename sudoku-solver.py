@@ -23,7 +23,7 @@ class SudokuModelSolutionCallback(cp_model.CpSolverSolutionCallback):
         self.__variables = variables
 
     def on_solution_callback(self):
-        path = self._output_dir.joinpath(str(self.__solution_count))
+        path = self._output_dir.joinpath(str(self.__solution_count) + ".csv")
         with path.open(mode="wt") as fobj:
             for i in self._row_idx_range:
                 fobj.write(
