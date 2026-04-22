@@ -12,7 +12,6 @@ The script `sudoku-solver.py` solves Sudoku puzzles.
 * [mise](https://mise.jdx.dev/)
 
 ``` shell
-mise run install
 mise exec -- pixi shell
 ```
 
