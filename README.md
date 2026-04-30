@@ -9,7 +9,7 @@ The script `sudoku-solver.py` solves Sudoku puzzles.
 
 ## Prerequisites
 
-* [mise](https://mise.jdx.dev/)
+* [mise](https://mise.en.dev/)
 
 ``` shell
 mise exec -- pixi shell
