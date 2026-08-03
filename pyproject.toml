@@ -51,6 +51,7 @@ ignore = [
   'ERA',  # https://docs.astral.sh/ruff/rules/#eradicate-era
   'FIX002',  # https://docs.astral.sh/ruff/rules/line-contains-todo/
   'ISC001',  # https://docs.astral.sh/ruff/rules/single-line-implicit-string-concatenation/
+  'PLR0913',  # https://docs.astral.sh/ruff/rules/too-many-arguments/
   'Q000',  # https://docs.astral.sh/ruff/rules/bad-quotes-inline-string/
   'Q001',  # https://docs.astral.sh/ruff/rules/bad-quotes-multiline-string/
   'Q002',  # https://docs.astral.sh/ruff/rules/bad-quotes-docstring/
