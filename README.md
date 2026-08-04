@@ -140,6 +140,6 @@ Conflicts:       35
 ```
 
 ``` shell
-find -- output -maxdepth 1 -type f -name '*.csv' -print0 | tr -cd -- '\0' | wc -c
+ls -1b -- output/*.csv | wc -l
 # 288
 ```
